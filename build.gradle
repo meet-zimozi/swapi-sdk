@@ -1,27 +1,27 @@
-apply plugin: 'android-library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.github.ben-manes.versions'
-apply plugin: "org.jlleitschuh.gradle.ktlint"
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android'
+}
+
 
 Properties properties = new Properties()
 if (project.rootProject.file("local.properties").exists()) {
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
 }
 
-
-group = library_project_group
-version = library_version
-
 android {
-    compileSdkVersion target_sdk
+    compileSdkVersion 30
+
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
-        minSdkVersion min_sdk
-        targetSdkVersion target_sdk
-        versionCode version_code
-        versionName library_version
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -55,6 +55,15 @@ android {
 def moshi_version = "1.9.2"
 def retrofit_version = "2.8.1"
 def coroutines_version = "1.3.0"
+def junit_version = "4.12"
+def truth_version = "0.40"
+def androidx_test_core_version = "1.2.0"
+def androidx_test_runner_version = "1.2.0"
+def androidx_test_rules_version = "1.2.0"
+def androidx_test_ext_junit_version = "1.1.3"
+def androidx_test_ext_truth_version = "0.40"
+def androidx_test_espresso_version = "3.4.0"
+def kotlin_version = " 1.3.50"
 
 dependencies {
     // Testing - https://developer.android.com/training/testing/set-up-project
