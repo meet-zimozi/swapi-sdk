@@ -10,6 +10,13 @@ The SWAPI (Star Wars API) SDK for Android
 How to use it
 =============
 
+
+1. download or clone project 
+2. import downloaded project as module 
+3. write ``` implementation project(':swapi-sdk')``` in ```build.gradle(app)```
+4. hit ```Sync Now``` and done.
+
+
 Create a global instance in your application class
 ```kotlin
 public class YourStarWarsApp extends Application {
